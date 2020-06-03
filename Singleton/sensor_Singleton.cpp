@@ -5,7 +5,7 @@ class Sensor {
    static Sensor *sensor1;
    int data;
  
-   // Private constructor so that no objects can be created.
+   // Private constructor.
    Sensor() {
       data = 0;
    }
@@ -25,3 +25,14 @@ class Sensor {
       this -> data = data;
    }
 };
+
+//Initialize pointer to zero so that it can be initialized in first call to getInstance
+Sensor *Sensor::sensor1 = 0;
+
+int test_singleton(){
+   Sensor *s = s->getInstance();
+   cout << s->getData() << endl;
+   s->setData(57);
+   cout << s->getData() << endl;
+   return 0;
+}
